@@ -1,0 +1,209 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>BIGLAMBA - Hair & Beauty Salon</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      margin: 0;
+      padding: 0;
+      background: #fafafa;
+      color: #333;
+    }
+    header {
+      background: #8e44ad;
+      color: white;
+      padding: 20px;
+      text-align: center;
+    }
+    header h1 {
+      margin: 0;
+      font-size: 2em;
+    }
+    .search-filter {
+      display: flex;
+      justify-content: center;
+      gap: 10px;
+      margin: 20px;
+    }
+    .search-filter input, .search-filter select {
+      padding: 10px;
+      font-size: 1em;
+      border: 1px solid #ccc;
+      border-radius: 5px;
+    }
+    .services {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
+      gap: 20px;
+      padding: 20px;
+    }
+    .card {
+      background: white;
+      border-radius: 10px;
+      padding: 15px;
+      box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+      text-align: center;
+      transition: transform 0.2s;
+    }
+    .card:hover {
+      transform: scale(1.05);
+    }
+    .card img {
+      width: 100%;
+      height: 180px;
+      object-fit: cover;
+      border-radius: 8px;
+    }
+    .card h3 {
+      margin: 10px 0 5px;
+    }
+    .price {
+      color: #8e44ad;
+      font-weight: bold;
+    }
+    .find-us {
+      padding: 20px;
+      text-align: center;
+      background: #f0f0f0;
+    }
+    .find-us h2 {
+      margin-bottom: 10px;
+      color: #8e44ad;
+    }
+    .find-us iframe {
+      width: 100%;
+      height: 350px;
+      border: 0;
+      border-radius: 10px;
+    }
+    footer {
+      background: #333;
+      color: white;
+      padding: 20px;
+      text-align: center;
+    }
+    footer p {
+      margin: 5px 0;
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <h1>BIGLAMBA Salon</h1>
+    <p>Hair, Nails & Beauty Services</p>
+  </header>
+
+  <!-- Search & Filter -->
+  <div class="search-filter">
+    <input type="text" id="search" placeholder="Search hairstyle or service...">
+    <select id="filter">
+      <option value="all">All Categories</option>
+      <option value="hair">Hairstyles</option>
+      <option value="men">Men’s Cuts</option>
+      <option value="nails">Nails & Pedicure</option>
+      <option value="beauty">Makeup & Beauty</option>
+    </select>
+  </div>
+
+  <!-- Services Grid -->
+  <div class="services" id="services">
+    <!-- Hairstyles -->
+    <div class="card" data-category="hair">
+      <img src="https://i.postimg.cc/RVYBcwkY/9aacbea19d9f381e062da34e2eb88e6d.jpg" alt="Braids">
+      <h3>Braids</h3>
+      <p class="price">₦8,000</p>
+    </div>
+    <div class="card" data-category="hair">
+      <img src="https://i.postimg.cc/bvtkzHPf/straight-back-cornrows-stitch-and-two-buns-1-1.jpg" alt="Cornrows">
+      <h3>Cornrows</h3>
+      <p class="price">₦6,500</p>
+    </div>
+    <div class="card" data-category="hair">
+      <img src="https://i.postimg.cc/50N6GwsV/5c5ba0bea8d873e2b550dc52f9c4e7da.jpg" alt="Wig Installation">
+      <h3>Wig Installation</h3>
+      <p class="price">₦12,000</p>
+    </div>
+
+    <!-- Men’s Cuts -->
+    <div class="card" data-category="men">
+      <img src="https://i.postimg.cc/Gpj4qMJK/7e987bfe73cca34d0a92382220b11a09.jpg" alt="Fade Cut">
+      <h3>Fade Cut</h3>
+      <p class="price">₦3,500</p>
+    </div>
+    <div class="card" data-category="men">
+      <img src="https://images.unsplash.com/photo-1585747860715-2ba37e788b70" alt="Beard Grooming">
+      <h3>Beard Grooming</h3>
+      <p class="price">₦2,500</p>
+    </div>
+
+    <!-- Nails & Pedicure -->
+    <div class="card" data-category="nails">
+      <img src="https://i.postimg.cc/dtzZ1ZV2/dd24a7828608e21dfc78b30909eebe1e.jpg" alt="Acrylic Nails">
+      <h3>Acrylic Nails</h3>
+      <p class="price">₦7,000</p>
+    </div>
+    <div class="card" data-category="nails">
+      <img src="https://images.unsplash.com/photo-1582095133179-bfd08e2fc6b3" alt="Pedicure">
+      <h3>Pedicure</h3>
+      <p class="price">₦5,000</p>
+    </div>
+
+    <!-- Makeup & Beauty -->
+    <div class="card" data-category="beauty">
+      <img src="https://i.postimg.cc/Njm9rGKW/53f4202a6345b62a5da4368beddfbcf8.jpg" alt="Bridal Makeup">
+      <h3>Bridal Makeup</h3>
+      <p class="price">₦15,000</p>
+    </div>
+    <div class="card" data-category="beauty">
+      <img src="https://i.postimg.cc/SK4XL08j/40a8999a572ff9ad33bd233885b8b035.jpg" alt="Casual Makeup">
+      <h3>Casual Makeup</h3>
+      <p class="price">₦6,000</p>
+    </div>
+  </div>
+
+  <!-- Find Us Section with Placeholder Map -->
+  <section class="find-us">
+    <h2>Find Us</h2>
+    <p>Click or move the map to see our location</p>
+    <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3966.3154035873904!2d7.0658163!3d6.2220768999999985!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x104382f1255302e1%3A0x6526ad545c883b6c!2sKizzy%20Iconic%20Unisex%20Salon!5e0!3m2!1sen!2sng!4v1757927602393!5m2!1sen!2sng" width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+  </section>
+
+  <!-- Footer -->
+  <footer>
+    <p><strong>Address:</strong> 45 Beauty Avenue, Anambara ifite awka, Nigeria</p>
+    <p><strong>Phone:</strong> +234 901 234 5678</p>
+    <p><strong>Opening Hours:</strong> Mon-Sat (9am - 9pm), Sun (12pm - 6pm)</p>
+    <p>&copy; 2025 BIGLAMBA Salon. All rights reserved.</p>
+  </footer>
+
+  <!-- JavaScript for Search & Filter -->
+  <script>
+    const searchInput = document.getElementById('search');
+    const filterSelect = document.getElementById('filter');
+    const serviceCards = document.querySelectorAll('.card');
+
+    function filterServices() {
+      const searchText = searchInput.value.toLowerCase();
+      const filterValue = filterSelect.value;
+
+      serviceCards.forEach(card => {
+        const name = card.querySelector('h3').textContent.toLowerCase();
+        const category = card.getAttribute('data-category');
+
+        if ((filterValue === "all" || category === filterValue) &&
+            name.includes(searchText)) {
+          card.style.display = "block";
+        } else {
+          card.style.display = "none";
+        }
+      });
+    }
+
+    searchInput.addEventListener('input', filterServices);
+    filterSelect.addEventListener('change', filterServices);
+  </script>
+</body>
+</html>
